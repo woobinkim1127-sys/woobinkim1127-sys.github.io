@@ -1,0 +1,16 @@
+---
+layout: default
+---
+<article>
+  <h2>{{ page.title }}</h2>
+  <div>
+    <span>{{ page.date | date: "%Y-%m-%d" }}</span> | 
+    <span>分类: <a href="{{ site.baseurl }}/categories.html#{{ page.categories | join: '-' }}">{{ page.categories | join: ' / ' }}</a></span>
+    {% if page.tags %}
+    | <span>标签: {% for tag in page.tags %}<a href="{{ site.baseurl }}/tags.html#{{ tag }}">{{ tag }}</a> {% endfor %}</span>
+    {% endif %}
+  </div>
+  <div>
+    {{ content }}
+  </div>
+</article>
